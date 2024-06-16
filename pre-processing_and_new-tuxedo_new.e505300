@@ -1,0 +1,264 @@
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1549, uncontaminated: 5005476, total: 5007025
+contamination rate: 0.000309
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 1076, 288, 15, 87, 20, 13, 12, 19, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 5007025
+FastQ records discarded: 0
+
+5007025 reads; of these:
+  5007025 (100.00%) were unpaired; of these:
+    80 (0.00%) aligned 0 times
+    4472014 (89.31%) aligned exactly 1 time
+    534931 (10.68%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1612, uncontaminated: 4787005, total: 4788617
+contamination rate: 0.000337
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 1123, 300, 40, 66, 31, 13, 6, 16, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 8, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 4788617
+FastQ records discarded: 0
+
+4788617 reads; of these:
+  4788617 (100.00%) were unpaired; of these:
+    111 (0.00%) aligned 0 times
+    4215230 (88.03%) aligned exactly 1 time
+    573276 (11.97%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1448, uncontaminated: 4270489, total: 4271937
+contamination rate: 0.000339
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 1006, 263, 33, 69, 22, 9, 17, 6, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7, 2, 8, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 4271937
+FastQ records discarded: 0
+
+4271937 reads; of these:
+  4271937 (100.00%) were unpaired; of these:
+    77 (0.00%) aligned 0 times
+    3818270 (89.38%) aligned exactly 1 time
+    453590 (10.62%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1327, uncontaminated: 4825269, total: 4826596
+contamination rate: 0.000275
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 906, 280, 27, 48, 15, 4, 8, 14, 9, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 4826596
+FastQ records discarded: 0
+
+4826596 reads; of these:
+  4826596 (100.00%) were unpaired; of these:
+    113 (0.00%) aligned 0 times
+    4262928 (88.32%) aligned exactly 1 time
+    563555 (11.68%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1353, uncontaminated: 4508122, total: 4509475
+contamination rate: 0.000300
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 842, 284, 39, 96, 24, 3, 20, 10, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10, 6, 2, 2, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 4509475
+FastQ records discarded: 0
+
+4509475 reads; of these:
+  4509475 (100.00%) were unpaired; of these:
+    93 (0.00%) aligned 0 times
+    3942328 (87.42%) aligned exactly 1 time
+    567054 (12.57%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1040, uncontaminated: 4778803, total: 4779843
+contamination rate: 0.000218
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 661, 220, 28, 64, 23, 12, 10, 14, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 4779843
+FastQ records discarded: 0
+
+4779843 reads; of these:
+  4779843 (100.00%) were unpaired; of these:
+    91 (0.00%) aligned 0 times
+    4176013 (87.37%) aligned exactly 1 time
+    603739 (12.63%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1051, uncontaminated: 3740833, total: 3741884
+contamination rate: 0.000281
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 690, 220, 38, 49, 14, 5, 12, 12, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 3741884
+FastQ records discarded: 0
+
+3741884 reads; of these:
+  3741884 (100.00%) were unpaired; of these:
+    95 (0.00%) aligned 0 times
+    3176155 (84.88%) aligned exactly 1 time
+    565634 (15.12%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 2165, uncontaminated: 7707503, total: 7709668
+contamination rate: 0.000281
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 1427, 465, 53, 114, 21, 13, 33, 12, 10, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 9, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 7709668
+FastQ records discarded: 0
+
+7709668 reads; of these:
+  7709668 (100.00%) were unpaired; of these:
+    194 (0.00%) aligned 0 times
+    6549587 (84.95%) aligned exactly 1 time
+    1159887 (15.04%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 5 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1407, uncontaminated: 5626462, total: 5627869
+contamination rate: 0.000250
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 952, 286, 15, 87, 15, 11, 22, 1, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 5627869
+FastQ records discarded: 0
+
+5627869 reads; of these:
+  5627869 (100.00%) were unpaired; of these:
+    99 (0.00%) aligned 0 times
+    5006509 (88.96%) aligned exactly 1 time
+    621261 (11.04%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1632, uncontaminated: 5953416, total: 5955048
+contamination rate: 0.000274
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 1077, 329, 30, 115, 18, 10, 19, 9, 4, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 1, 0, 6, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 5955048
+FastQ records discarded: 0
+
+5955048 reads; of these:
+  5955048 (100.00%) were unpaired; of these:
+    113 (0.00%) aligned 0 times
+    5201316 (87.34%) aligned exactly 1 time
+    753619 (12.66%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 4 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1164, uncontaminated: 5019472, total: 5020636
+contamination rate: 0.000232
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 787, 217, 17, 90, 16, 10, 8, 8, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 5020636
+FastQ records discarded: 0
+
+5020636 reads; of these:
+  5020636 (100.00%) were unpaired; of these:
+    89 (0.00%) aligned 0 times
+    4479282 (89.22%) aligned exactly 1 time
+    541265 (10.78%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
+prior: 0.050
+
+Adapter Trimming Complete
+contaminated: 1179, uncontaminated: 4235397, total: 4236576
+contamination rate: 0.000278
+Adapter 1 'universal adapter (rc)' contamination occurences:
+[0, 0, 0, 0, 0, 822, 223, 14, 68, 8, 4, 13, 9, 4, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Adapter 2 'index adapter' contamination occurences:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+FastQ records kept: 4236576
+FastQ records discarded: 0
+
+4236576 reads; of these:
+  4236576 (100.00%) were unpaired; of these:
+    111 (0.00%) aligned 0 times
+    3696339 (87.25%) aligned exactly 1 time
+    540126 (12.75%) aligned >1 times
+100.00% overall alignment rate
+[samopen] SAM header is present: 1 sequences.
+[bam_sort_core] merging from 3 files...
