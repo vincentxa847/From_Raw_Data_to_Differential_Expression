@@ -14,10 +14,10 @@ Hisat2 also adopts hierarchical indexing from the HISAT to accelerate the alignm
 [Stringtie](https://doi.org/10.1038/nprot.2016.095) that computing bases on the building of flow network is utilized to perform assembly and quantification of transcripts. Then, 
 prepDE.py from Stringtie turns the GTF file producing by stringtie into expression matrix.
 
-Differential expression (DE) analysis is conducted using [DESeq2](https://doi.org/10.1186/s13059-014-0550-8), which is featured with the shrinkage for dispersion and fold-change estimation to deal 
+Differential expression (DE) analysis is performed using [DESeq2](https://doi.org/10.1186/s13059-014-0550-8), which is featured with the shrinkage for dispersion and fold-change estimation to deal 
 with small sample sizes and heteroskedasticity. (*Differential_expression_analysis.R*)
 ### Dataset Used
-Raw data files 
+Raw data files (not provided here)
 - s1.c2.fq -> group “A” replicate 1 
 - s2.c2.fq -> group “A” replicate 2 
 - s3.c2.fq -> group “A” replicate 3 
@@ -34,4 +34,11 @@ Raw data files
 These data sets contain sequencing reads generated with single-end sequencing using NextSeq500 sequencer. The reads are preselected so that they originate from chromosome 2 of mouse genome. 
 
 Reference genome : 
-The reference genome in form of fasta file represents chromosome 2 of mm10 mouse genome:
+The reference genome in form of fasta file represents chromosome 2 of mm10 mouse genome
+
+## Result 
+From the result of error file of *From Raw Data to Gene Count Table.sh*, It can be seen from the error file that about 1500 adapters were identified and trimmed 
+for each group, adapter contamination rates of twelve groups range from only 0.0002 to 0.0003 before trimming. It seems that reads had already trimmed before. 
+Most of the contamination come from universal adapters, with the purpose of anchoring reads on flow cell. Also, no read was discarded due to the length of read below threshold after 
+quality trimming, which can be deduced that the quality of raw read is good. The percentage of read aligned exactly one time of each group range from 84 to 89, demonstrating a good quality of alignment. 
+
