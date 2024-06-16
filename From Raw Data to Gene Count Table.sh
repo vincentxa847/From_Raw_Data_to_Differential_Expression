@@ -1,4 +1,10 @@
-# From Raw Data to Gene-count table on HPC
+#! /bin/bash
+#PBS -l nodes=1:ppn=4:centos6,cput=24:00:00,walltime=48:00:00
+#PBS -N softlink
+#PBS -d /export/home/biostuds/2802815l
+#PBS -m abe
+#PBS -M vincent23495380@gmail.com
+#PBS -q bioinf-stud
 
 # Making directory for this project and soft link of raw data files
 assignment1='/export/home/biostuds/2802815l/assignment1' 
@@ -29,7 +35,7 @@ mkdir -p $stringtie_dir # make above stringtie directory
 gtflist='list.gtf.txt' # filename for final GTF list
 rm -f ${gtflist} # remove if exists
 
-#RUNNING a single LOOP for all the work
+#RUNNING a single LOOP for all of the samples
 for sample in s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12
 do
 fastq="$data${sample}.c2.fq" # path to raw fastq file
