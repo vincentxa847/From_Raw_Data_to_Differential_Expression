@@ -1,8 +1,30 @@
 # From Raw Data to Differential Expression
-## This project demonstrates fundamental RNA-Seq data processing skills by using the NewTuxedo cascade and DESeq2 to convert raw data into a gene count table and perform differential expression analysis.
+## This project demonstrates NGS data processing skills by using the NewTuxedo cascade and DESeq2 to convert raw data into a gene count table and perform differential expression analysis.
 
 ## Method
-Raw reads undergo Read pre-processing and new Tuxedo 2 cascade of Hisat2 and Stringtie to produce expression matrix that features by samples for differential expression analysis. (*From Raw Data to Gene Count Table.sh*)
+Raw reads undergo Read pre-processing and new Tuxedo 2 cascade of Hisat2 and Stringtie to produce expression matrix that features by samples for differential expression analysis.
+```
+for sample in tb1.25K tb2.25K tb3.25K wf1.25K wf2.25K wf3.25K
+do
+fastq="$data${sample}.fq" # path to raw fastq file
+trim1="${sample}.t1.fq" # path to adapter-trimmed fastq file
+trim2="${sample}.t2.fq" # path to quality-trimmed fastq file
+scythe -o $trim1 -a $adapter -q illumina $fastq # command to execute scythe, INPUT READS ARE IN THE ILLUMINA FORMAT
+sickle se -f $trim1 -o $trim2 -t illumina -q [10] -l [50] # command to execute sickle, KEEP THE MINIMUN LENGTH OF READS 50, WHICH IS ROUGHLY 2/3 OF THE RAW READ LENGTH
+hisat2 -x $hs2index -U $trim2 -S ${sample}.sam --phred64 --rna-strandness R # command to execute hisat2 for spliced alignment, SAMPLE FROM STRANDED LIBRARY, RAW DATA QUALITY SCORES BEGIN WITH @ (64)
+samtools view -bS -o "${sample}.bam" "${sample}.sam" # command to execute samtools view
+samtools sort "${sample}.bam" "${sample}.sort" # command to execute samtools sort
+rm "${sample}.sam"  "${sample}.bam" # removing unnecessary files
+rm $trim1 $trim2 # removing unnecessary files
+str_smp_dir="$stringtie_dir/${sample}" # path to sample-specific subdirectory for stringtie results
+mkdir -p $str_smp_dir # make the above directory
+stringtie "${sample}.sort.bam" -p 4 -G $gtf -e -o "$str_smp_dir/${sample}.gtf"   # command to execute stringtie, NON-DISCOVERY MODE
+gtfline="${sample} $str_smp_dir/${sample}.gtf" # line containing sample and path to GTF
+echo $gtfline >> $gtflist # adding the above line to a file
+done
+# Converting sample-specific GTFs to a single gene-count matrix
+python2.7 /App/prepDE.py -i $gtflist
+```
 
 [Scythe](https://github.com/vsbuffalo/scythe) is for removing 3’ end adaptor, which using poor quality bases to identify and remove adaptor. 
 [Sickle](https://github.com/najoshi/sickle) is for quality trimming, which using window based algorithms to remove bases with low quality that accumulate in both ends of read. 
@@ -31,7 +53,7 @@ Raw data files (not provided here)
 - s11.c2.fq -> group “C” replicate 3 
 - s12.c2.fq -> group “C” replicate 4
 
-These data sets contain sequencing reads generated with single-end sequencing using NextSeq500 sequencer. The reads are preselected so that they originate from chromosome 2 of mouse genome. 
+These data sets contain sequencing reads generated with single-end sequencing using NextSeq500 sequencer, which  were prepared using Illumina “stranded” protocol The reads are preselected so that they originate from chromosome 2 of mouse genome. 
 
 Reference genome : 
 The reference genome in form of fasta file represents chromosome 2 of mm10 mouse genome
