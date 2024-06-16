@@ -63,3 +63,66 @@ lgc.norm_gene = log2(counts(DE_gene,normalized=TRUE)+0.01)
 meanSdPlot(lgc.raw_gene)  
 meanSdPlot(lgc.norm_gene)
 meanSdPlot(assay(rld_gene)) # need "assay" to extract rlog transformation data
+
+#### differential expression for all contrasts, extract from DESeq object ####
+
+# NULL hypothesis of LFC = 0 (standard)
+res_ZERO = results(DE_gene)
+# quickly see the number of DE genes
+summary(res_ZERO,alpha=0.05)
+res_ZERO_sort = res_ZERO[order(res_ZERO$padj),]
+
+
+# NULL hypothesis of LFC < 1 (fold change of 2)
+res_ONE = results(DE_gene,lfcThreshold=1)
+# quickly see the number of DE genes
+summary(res_ONE,alpha=0.05)
+res_ONE_sort = res_ONE[order(res_ONE$padj),]
+
+# generate MA plot
+par(mfrow = c(1,2)) # spilt the window for LFC=0 and LFC=1
+DESeq2::plotMA(res_ZERO,alpha=0.001,main="LFC = 0")
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
+DESeq2::plotMA(res_ONE,alpha=0.001,main="LFC = 1") 
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
+
+# B and A
+# NULL hypothesis of LFC = 0 (standard)
+res_ZERO_B_A = results(DE_gene,contrast=c("group","B","A"))
+# quickly see the number of DE genes
+summary(res_ZERO_B_A,alpha=0.05)
+res_ZERO_B_A_sort = res_ZERO_B_A[order(res_ZERO_B_A$padj),]
+
+# NULL hypothesis of LFC < 1 (fold change of 2)
+res_ONE_B_A = results(DE_gene,contrast=c("group","B","A"),lfcThreshold=1)
+# quickly see the number of DE genes
+summary(res_ONE_B_A,alpha=0.05)
+res_ONE_B_A_sort = res_ONE_B_A[order(res_ONE_B_A$padj),]
+
+# generate MA plot
+par(mfrow = c(1,2)) # spilt the window for LFC=0 and LFC=1
+DESeq2::plotMA(res_ZERO_B_A,alpha=0.001,main="B and A LFC = 0")
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
+DESeq2::plotMA(res_ONE_B_A,alpha=0.001,main="B and A LFC = 1") 
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
+resultsNames(DE_gene)
+
+# A and C
+# NULL hypothesis of LFC = 0 (standard)
+res_ZERO_A_C = results(DE_gene,contrast=c("group","A","C"))
+# quickly see the number of DE genes
+summary(res_ZERO_A_C,alpha=0.05)
+res_ZERO_A_C_sort = res_ZERO_A_C[order(res_ZERO_A_C$padj),]
+
+# NULL hypothesis of LFC < 1 (fold change of 2)
+res_ONE_A_C = results(DE_gene,contrast=c("group","A","C"),lfcThreshold=1)
+# quickly see the number of DE genes
+summary(res_ONE_A_C,alpha=0.05)
+res_ONE_A_C_sort = res_ONE_A_C[order(res_ONE_A_C$padj),]
+
+# generate MA plot
+par(mfrow = c(1,2)) # spilt the window for LFC=0 and LFC=1
+DESeq2::plotMA(res_ONE_A_C,alpha=0.001,main="A and C LFC = 0")
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
+DESeq2::plotMA(res_ONE_A_C,alpha=0.001,main="A and C LFC = 1") 
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
