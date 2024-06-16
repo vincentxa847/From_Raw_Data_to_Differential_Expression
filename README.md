@@ -15,7 +15,7 @@ Hisat2 also adopts hierarchical indexing from the HISAT to accelerate the alignm
 prepDE.py from Stringtie turns the GTF file producing by stringtie into expression matrix.
 
 Differential expression (DE) analysis is conducted using [DESeq2](https://doi.org/10.1186/s13059-014-0550-8), which is featured with the shrinkage for dispersion and fold-change estimation to deal 
-with small sample sizes and heteroskedasticity.  
+with small sample sizes and heteroskedasticity. (*Differential_expression_analysis.R*)
 ### Dataset Used
 Raw data files 
 - s1.c2.fq -> group “A” replicate 1 
