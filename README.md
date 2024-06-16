@@ -2,7 +2,7 @@
 ## This project demonstrates fundamental RNA-Seq data processing skills by using the NewTuxedo cascade and DESeq2 to convert raw data into a gene count table and perform differential expression analysis.
 
 ## Method
-Raw reads undergo Read pre-processing and new Tuxedo 2 cascade of Hisat2 and Stringtie to produce expression matrix that features by samples for differential expression analysis.
+Raw reads undergo Read pre-processing and new Tuxedo 2 cascade of Hisat2 and Stringtie to produce expression matrix that features by samples for differential expression analysis. (*From Raw Data to Gene Count Table.sh*)
 
 [Scythe](https://github.com/vsbuffalo/scythe) is for removing 3’ end adaptor, which using poor quality bases to identify and remove adaptor. 
 [Sickle](https://github.com/najoshi/sickle) is for quality trimming, which using window based algorithms to remove bases with low quality that accumulate in both ends of read. 
