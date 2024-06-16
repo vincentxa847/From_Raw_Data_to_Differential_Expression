@@ -42,3 +42,41 @@ for each group, adapter contamination rates of twelve groups range from only 0.0
 Most of the contamination come from universal adapters, with the purpose of anchoring reads on flow cell. Also, no read was discarded due to the length of read below threshold after 
 quality trimming, which can be deduced that the quality of raw read is good. The percentage of read aligned exactly one time of each group range from 84 to 89, demonstrating a good quality of alignment. 
 
+Dispersion plots of gene and transcript show the shrinkage of gene-wise estimates toward the consensus represented by red line. It can be seen that the 
+dispersion of transcript is generally variable than gene, which means noise is likely to dominate the biologically meaningful signal, therefore shrinkage is important for 
+the transcript to ensure an accurate DE analysis. [However, the effect of shrinkage on  transcript is less extent when comparing with the effect of shrinkage on gene, this 
+is because the ambiguity in mapping fragments to transcripts](https://doi.org/10.1038/nbt.2450) 
+![image](https://github.com/vincentxa847/From_Raw_Data_to_Differential_Expression/assets/118545004/751ebdcd-a403-44ec-8d77-6e490e64704c)\
+*Figure1: Dispersion plot of gene and transcript. Black dots are the maximum-likelihood estimate (MLE), Curve (red) is fit to the MLE to depict the overall trend of dispersion 
+mean dependence. Blue dots are the maximum a posteriori that come from the second estimation using fit. For gene’s and transcript’s dispersions that show significant above 
+the curve will be viewed as outliner (black dots circled in blue) and not undergo shrinkage.*
+
+rlog-based PCA plot of gene shows a similarity between group A and B, group C show difference when comparing with group A and B. When comparing 
+the rlog-based PCA plot of gene with transcript, it is observed that the variance of transcript within group is significant than gene, which is consistent with the result 
+of Figure1 that dispersion of transcript is greater than gene. 
+![image](https://github.com/vincentxa847/From_Raw_Data_to_Differential_Expression/assets/118545004/bff27090-c760-45ed-a146-d9804c9d1909)\
+*Figure 2: rlog-based PCA plot of gene. Each group has three replicates. Similarity is observed between the group A and C.*
+
+Regularized logarithm (rlog) transformation behaves similarly to standard logarithm transformation for genes with high counts but shrinking the genes with low counts. This 
+can avoid noise dominate biologically meaningful signal in low read counts data, which is common when standard logarithm transformation is used to transform data. 
+SD versus mean plots show variance of each gene across samples. It can be seen that the deviation of variance is stable across the range of mean after rlog 
+transformation, which is the effect of regularized logarithm transformation on the variance that makes the data homoskedastic.  
+![image](https://github.com/vincentxa847/From_Raw_Data_to_Differential_Expression/assets/118545004/ecea2690-ecdc-44f6-9708-6444e1ea24e2)
+![image](https://github.com/vincentxa847/From_Raw_Data_to_Differential_Expression/assets/118545004/198766b2-8e27-41d5-9a18-b58c01db411f)
+*Figure 3: SD versus mean plots of data after standard logarithm transformation (upper) and Regularized logarithm transformation (lower). SD on y-axis is the variance across all samples, therefore the SD also depicts the variance of experimental conditions that changes the shape of curve.* 
+
+MA-plots of the DE analysis between group B and group A show that genes with low read counts have stronger difference between the compared groups than 
+genes with high read counts. This phenomenon called “heteroskedasticity”, which is a common issue of count data that noise appears when counts are low. 
+![image](https://github.com/vincentxa847/From_Raw_Data_to_Differential_Expression/assets/118545004/e8a440a1-b2ae-479a-8d7c-d8bc2e0f6639)
+*Figure 4A:  MA-plots of the differential expression analysis between group B and group A*
+
+Shrinking of LFC by DESeq2 can overcome the problem. Shrinking of LFC by DESeq2 is stronger to genes with less information that result from low read counts 
+or high dispersion, this adjustment can correct the exaggeration of LFC of low read counts. 
+![image](https://github.com/vincentxa847/From_Raw_Data_to_Differential_Expression/assets/118545004/ea66e275-da96-4416-9921-7dd292b95a12)
+*Figure 4B:  MA-plots of the differential expression analysis between group B and group A, empirical Bayes shrinkage for 
+fold-change estimation is adopted*
+
+In order to deal with genes that have statistically significance but weak in effect strength, DESeq2 can set the LFC threshold to directly filter genes with log fold change above 
+specified level (Figure 4). DE expression analysis of group B and A against the null hypothesis of LFC = 0 has 275 genes with significant upregulation and 259 genes with 
+significant downregulation. In contrast, null hypothesis of LFC = 1 has only 45 genes with significant upregulation and 2 genes with significant downregulation. Specifying 
+minimum effect size can not only filter out genes that poor in effect strength but also narrow down the number of target genes for downstream analysis. 
