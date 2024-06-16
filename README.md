@@ -4,14 +4,14 @@
 ## Method
 Raw reads undergo Read pre-processing and new Tuxedo 2 cascade of Hisat2 and Stringtie to produce expression matrix that features by samples for differential expression analysis.
 ```
-for sample in tb1.25K tb2.25K tb3.25K wf1.25K wf2.25K wf3.25K
+for sample in s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12
 do
-fastq="$data${sample}.fq" # path to raw fastq file
+fastq="$data${sample}.c2.fq" # path to raw fastq file
 trim1="${sample}.t1.fq" # path to adapter-trimmed fastq file
 trim2="${sample}.t2.fq" # path to quality-trimmed fastq file
-scythe -o $trim1 -a $adapter -q illumina $fastq # command to execute scythe, INPUT READS ARE IN THE ILLUMINA FORMAT
-sickle se -f $trim1 -o $trim2 -t illumina -q [10] -l [50] # command to execute sickle, KEEP THE MINIMUN LENGTH OF READS 50, WHICH IS ROUGHLY 2/3 OF THE RAW READ LENGTH
-hisat2 -x $hs2index -U $trim2 -S ${sample}.sam --phred64 --rna-strandness R # command to execute hisat2 for spliced alignment, SAMPLE FROM STRANDED LIBRARY, RAW DATA QUALITY SCORES BEGIN WITH @ (64)
+scythe -o $trim1 -a $adapter -q sanger $fastq # command to execute scythe, BY CHECKING FASTA FILE, CAN KNOW INPUT READS ARE IN THE SANGER FORMAT
+sickle se -f $trim1 -o $trim2 -t sanger -q [10] -l [50] # command to execute sickle, KEEP THE MINIMUN LENGTH OF READS 50, WHICH IS ROUGHLY 2/3 OF THE RAW READ LENGTH
+hisat2 -x $hs2index -U $trim2 -S ${sample}.sam --phred33 --rna-strandness R # command to execute hisat2 for spliced alignment, SAMPLE FROM STRANDED LIBRARY, RAW DATA QUALITY SCORES BEGIN WITH ! (33)
 samtools view -bS -o "${sample}.bam" "${sample}.sam" # command to execute samtools view
 samtools sort "${sample}.bam" "${sample}.sort" # command to execute samtools sort
 rm "${sample}.sam"  "${sample}.bam" # removing unnecessary files
@@ -23,7 +23,9 @@ gtfline="${sample} $str_smp_dir/${sample}.gtf" # line containing sample and path
 echo $gtfline >> $gtflist # adding the above line to a file
 done
 # Converting sample-specific GTFs to a single gene-count matrix
-python2.7 /App/prepDE.py -i $gtflist
+gene='2802815_gene_count_matrix_nondisc.csv'
+trans='2802815_transcript_count_matrix_nondisc.csv'
+python2.7 /App/prepDE.py -i $gtflist -g $gene -t $trans
 ```
 
 [Scythe](https://github.com/vsbuffalo/scythe) is for removing 3’ end adaptor, which using poor quality bases to identify and remove adaptor. 
@@ -36,8 +38,8 @@ Hisat2 also adopts hierarchical indexing from the HISAT to accelerate the alignm
 [Stringtie](https://doi.org/10.1038/nprot.2016.095) that computing bases on the building of flow network is utilized to perform assembly and quantification of transcripts. Then, 
 prepDE.py from Stringtie turns the GTF file producing by stringtie into expression matrix.
 
-Differential expression (DE) analysis is performed using [DESeq2](https://doi.org/10.1186/s13059-014-0550-8), which is featured with the shrinkage for dispersion and fold-change estimation to deal 
-with small sample sizes and heteroskedasticity. (*Differential_expression_analysis.R*)
+Differential expression (DE) analysis is performed using [DESeq2](https://doi.org/10.1186/s13059-014-0550-8), which is featured with the shrinkage for dispersion and fold-change estimation to deal with small sample sizes and heteroskedasticity. (*Differential_expression_analysis.R*)
+
 ### Dataset Used
 Raw data files (not provided here)
 - s1.c2.fq -> group “A” replicate 1 
