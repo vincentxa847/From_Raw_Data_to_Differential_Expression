@@ -39,6 +39,17 @@ Hisat2 also adopts hierarchical indexing from the HISAT to accelerate the alignm
 prepDE.py from Stringtie turns the GTF file producing by stringtie into expression matrix.
 
 Differential expression (DE) analysis is performed using [DESeq2](https://doi.org/10.1186/s13059-014-0550-8), which is featured with the shrinkage for dispersion and fold-change estimation to deal with small sample sizes and heteroskedasticity. (*Differential_expression_analysis.R*)
+```
+#  Generate Deseq Data Set object of gene (same way for transcript)
+dds_gene = DESeqDataSetFromMatrix(countData=countTable_gene,colData=colTable_gene,design= ~ group)
+
+# Remove all the genes that have zero-counts in all samples
+notAllZero_gene = (rowSums(counts(dds_gene)) > 0) 
+dds_gene = dds[notAllZero_gene,]
+
+# Run the differential expression (DE) analysis for gene (same way for transcript)
+DE_gene = DESeq(dds_gene,test="Wald") # create dds object "DE_gene"
+```
 
 ### Dataset Used
 Raw data files (not provided here)
