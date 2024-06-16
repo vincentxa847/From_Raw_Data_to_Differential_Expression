@@ -80,3 +80,11 @@ In order to deal with genes that have statistically significance but weak in eff
 specified level (Figure 4). DE expression analysis of group B and A against the null hypothesis of LFC = 0 has 275 genes with significant upregulation and 259 genes with 
 significant downregulation. In contrast, null hypothesis of LFC = 1 has only 45 genes with significant upregulation and 2 genes with significant downregulation. Specifying 
 minimum effect size can not only filter out genes that poor in effect strength but also narrow down the number of target genes for downstream analysis. 
+
+## Discussion
+[New Tuxedo cascade of Hisat2 and Stringtie](https://doi.org/10.1038/nbt.3122) are used for raw assembly of transcripts and quantification of expression levels, DESeq2 rather than 
+Ballgown is adopted to conduct DE analysis. [Ballgown](https://doi.org/10.1038/nbt.3172) fitted the linear model to model read counts for each gene, which is similar approach using 
+in [limma](https://link.springer.com/chapter/10.1007/0-387-29362-0_23). While DESeq2 using negative binomial distribution to model read counts, [which is better 
+in specificity and sensitivities as well as good control of false positive errors](https://doi.org/10.1186/gb-2013-14-9-r95). However, the choose of DE analysis tools 
+depend on the experiment design such as replicate number, and no single tool perform favourably for all datasets. Therefore it is better to consider more than one tool when 
+performing DE analysis.
