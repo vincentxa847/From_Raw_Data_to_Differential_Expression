@@ -126,3 +126,23 @@ DESeq2::plotMA(res_ONE_A_C,alpha=0.001,main="A and C LFC = 0")
 abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
 DESeq2::plotMA(res_ONE_A_C,alpha=0.001,main="A and C LFC = 1") 
 abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
+
+#### generate MA plot for LFC=0, shrunken log2 fold-changes ####
+# Log fold change shrinkage for visualization and ranking
+
+# coef depends on the resultsNames(DE_gene)
+# there are three type available : apeglm, ashr and normal (As of version 1.28.0, it is the default estimator.)
+
+# fetch information for lfcShrink coef
+resultsNames(DE_gene)
+
+
+# DE of A and B
+res_shrunken_LFC_B_vs_A_LFC_0 = lfcShrink(DE_gene,coef="group_B_vs_A",type="apeglm",lfcThreshold = 0)
+res_shrunken_LFC_B_vs_A_LFC_1 = lfcShrink(DE_gene,coef="group_B_vs_A",type="apeglm",lfcThreshold = 1)
+
+par(mfrow = c(1,2)) # spilt the window for LFC=0 and LFC=1
+plotMA(res_shrunken_LFC_B_vs_A_LFC_0, main="shrunken B and A LFC =0")
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
+plotMA(res_shrunken_LFC_B_vs_A_LFC_1, main="shrunken B and A LFC =1")
+abline(h=c(-1,1),col="red") # black line mark for LFC=-1 and LFC=1
