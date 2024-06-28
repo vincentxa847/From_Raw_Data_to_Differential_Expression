@@ -1,3 +1,5 @@
+#! /bin/bash
+
 # From Raw Data to Differential Expression
 ## This project demonstrates NGS data processing skills by using the NewTuxedo cascade and DESeq2 to convert raw data into a gene count table and perform differential expression analysis.
 
