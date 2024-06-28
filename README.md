@@ -1,11 +1,10 @@
-#! /bin/bash
-
 # From Raw Data to Differential Expression
 ## This project demonstrates NGS data processing skills by using the NewTuxedo cascade and DESeq2 to convert raw data into a gene count table and perform differential expression analysis.
 
 ## Method
 Raw reads undergo Read pre-processing and new Tuxedo 2 cascade of Hisat2 and Stringtie to produce expression matrix that features by samples for differential expression analysis.
 ```
+#! /bin/bash
 for sample in s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12
 do
 fastq="$data${sample}.c2.fq" # path to raw fastq file
